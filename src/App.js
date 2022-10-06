@@ -1,23 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import UserProfile from './UserProfile';
+import pic1 from './assets/usr1.jpg'
+import pic2 from './assets/usr2.jpg'
+import pic3 from './assets/usr3.jpg'
+
+const users=[
+  {
+    img:pic1,
+    id:1,
+    name:'Nishant',
+    address:'UP',
+    color:'#fff',
+    backgroundColor:'red',
+    fontSize:10
+
+  },
+  {
+    img:pic2,
+    id:2,
+    name:'Ketan',
+    address:'MP',
+    color:'#fff',
+    backgroundColor:'green',
+    fontSize:12
+
+  },
+  {
+    img:pic3,
+    id:3,
+    name:'Yashwant',
+    address:'MP',
+    color:'#fff',
+    backgroundColor:'blue',
+    fontSize:14
+  }
+
+]
+// console.log(users)
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h4>Our Users</h4>
+      {users.map(items=>(
+        <UserProfile key={items.id} data={items}/>
+      ))}
     </div>
   );
 }
